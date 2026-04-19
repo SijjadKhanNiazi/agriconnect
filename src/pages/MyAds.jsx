@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { supabase } from "../services/supabaseClient";
 import toast from "react-hot-toast";
 import {
@@ -17,6 +19,8 @@ const MyAds = () => {
   const [filteredAds, setFilteredAds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const navigate = useNavigate();
 
   const categories = [
     "All",
@@ -172,12 +176,12 @@ const MyAds = () => {
                 : `Category "${selectedCategory}" mein koi ad nahi hai.`}
             </p>
             {selectedCategory === "All" && (
-              <a
-                href="/create"
+              <button
+                onClick={() => navigate("/create")}
                 className="bg-emerald-500 text-slate-950 px-8 py-4 rounded-2xl font-black hover:bg-emerald-400 transition-all inline-block shadow-lg active:scale-95"
               >
                 Post Now
-              </a>
+              </button>
             )}
           </div>
         ) : (
@@ -221,14 +225,12 @@ const MyAds = () => {
                     <div className="text-xl font-black text-white">
                       Rs. {ad.price?.toLocaleString()}
                     </div>
-                    <br />
-                    <p className="text-slate-400 text-xs line-clamp-1 mb-3">
-                      {ad.description}
-                    </p>
                   </div>
+                  <p className="text-slate-400 text-xs line-clamp-1 mt-3">
+                    {ad.description}
+                  </p>
                 </div>
 
-                {/* Actions */}
                 <div className="flex md:flex-col gap-3 w-full md:w-auto border-t md:border-t-0 md:border-l border-slate-700/50 pt-4 md:pt-0 md:pl-6">
                   <button
                     onClick={() => deleteAd(ad)}
@@ -236,12 +238,12 @@ const MyAds = () => {
                   >
                     <Trash2 size={20} />
                   </button>
-                  <a
-                    href={`/ad/${ad.id}`}
+                  <button
+                    onClick={() => navigate(`/ad/${ad.id}`)}
                     className="flex-1 md:h-12 md:w-12 bg-slate-900 text-slate-400 hover:bg-emerald-500 hover:text-slate-950 flex items-center justify-center p-3 rounded-xl transition-all border border-slate-700"
                   >
                     <ChevronRight size={20} />
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
