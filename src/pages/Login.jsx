@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { supabase } from "../services/supabaseClient";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, LogIn, Loader2, ArrowRight } from "lucide-react";
-import toast from "react-hot-toast"; // Toast Import
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,9 +20,9 @@ const Login = () => {
     });
 
     if (error) {
-      toast.error(error.message); // Alert replaced with Toast
+      toast.error(error.message);
     } else {
-      toast.success("Khushamdeed! Aap login ho chuke hain."); // Alert replaced with Toast
+      toast.success("Khushamdeed! Aap login ho chuke hain.");
       navigate("/");
     }
     setLoading(false);
@@ -44,7 +44,6 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="relative group">
             <Mail

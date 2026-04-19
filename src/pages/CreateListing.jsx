@@ -12,7 +12,7 @@ import {
   Camera,
   X,
   Type,
-  FileText, // Naya icon description ke liye
+  FileText,
 } from "lucide-react";
 
 const CreateListing = () => {
@@ -23,7 +23,7 @@ const CreateListing = () => {
     price: "",
     area: "Rokhri",
     contact: "",
-    description: "", // State mein field add ho gayi
+    description: "",
   });
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -94,7 +94,6 @@ const CreateListing = () => {
         publicImageUrl = urlData.publicUrl;
       }
 
-      // --- DATABASE INSERT (Description included) ---
       const { error } = await supabase.from("Listings").insert([
         {
           title: formData.title,
@@ -102,7 +101,7 @@ const CreateListing = () => {
           price: parseInt(formData.price),
           area: formData.area,
           contact: formData.contact,
-          description: formData.description, // Database mein insert
+          description: formData.description,
           image_url: publicImageUrl,
           user_id: user.id,
         },
@@ -130,7 +129,6 @@ const CreateListing = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Image Upload */}
           <div className="flex justify-center mb-8">
             {imagePreview ? (
               <div className="relative w-full h-48 rounded-3xl overflow-hidden border-2 border-emerald-500/30">
@@ -169,7 +167,6 @@ const CreateListing = () => {
             )}
           </div>
 
-          {/* Title */}
           <div className="relative group">
             <Type
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500"
@@ -226,7 +223,6 @@ const CreateListing = () => {
             </div>
           </div>
 
-          {/* Description Field (NAYA) */}
           <div className="relative group">
             <FileText
               className="absolute left-4 top-5 text-slate-500 group-focus-within:text-emerald-500"

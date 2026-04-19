@@ -2,7 +2,6 @@ import React from "react";
 import { TrendingUp, AlertCircle } from "lucide-react";
 
 const MandiTicker = () => {
-  // Aapka provided data
   const rates = [
     { crop: "Wheat (گندم)", price: "11,500 - 11,750", unit: "100kg" },
     { crop: "Rice Basmati (New)", price: "27,000 - 28,000", unit: "100kg" },
@@ -18,7 +17,6 @@ const MandiTicker = () => {
 
   return (
     <div className="bg-[#020617] border-y border-emerald-500/20 py-3 overflow-hidden flex items-center shadow-2xl relative">
-      {/* "LIVE" Indicator & Disclaimer Prompt */}
       <div className="absolute left-0 z-20 bg-[#020617] pr-4 pl-6 flex items-center gap-3 border-r border-emerald-500/10">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2 w-2">
@@ -30,16 +28,13 @@ const MandiTicker = () => {
           </span>
         </div>
 
-        {/* Verification Note (Static small text) */}
         <div className="hidden md:flex items-center gap-1.5 text-[9px] text-slate-500 font-bold uppercase border-l border-slate-800 pl-3">
           <AlertCircle size={10} className="text-amber-500" />
           <span>Rates are for info only. Verify before deal.</span>
         </div>
       </div>
 
-      {/* Marquee Container */}
       <div className="flex animate-marquee whitespace-nowrap gap-12 text-sm font-medium items-center ml-24 md:ml-64">
-        {/* Seamless Loop: [...rates, ...rates] creates an infinite scrolling effect */}
         {[...rates, ...rates].map((item, index) => (
           <div key={index} className="flex items-center gap-3 text-slate-300">
             <TrendingUp size={14} className="text-emerald-500" />
@@ -57,7 +52,6 @@ const MandiTicker = () => {
         ))}
       </div>
 
-      {/* Fade Effect on the right side */}
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#020617] to-transparent z-10"></div>
     </div>
   );

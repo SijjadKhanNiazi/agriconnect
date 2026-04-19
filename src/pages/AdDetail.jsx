@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "../services/supabaseClient";
-import toast from "react-hot-toast"; // Toaster import
+import toast from "react-hot-toast";
 import {
   MapPin,
   Phone,
@@ -21,7 +21,6 @@ const AdDetail = () => {
   const [ad, setAd] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Dynamic icon based on category for placeholders
   const getPlaceholderIcon = (category) => {
     const cat = category?.toLowerCase() || "";
     if (
@@ -44,7 +43,7 @@ const AdDetail = () => {
         .single();
 
       if (error) {
-        toast.error("Ad load karne mein masla hua!"); // Alert ki jagah Toast
+        toast.error("Ad load karne mein masla hua!");
         navigate("/");
       } else {
         setAd(data);
@@ -98,10 +97,8 @@ const AdDetail = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-slate-800/20 p-6 md:p-10 rounded-[3rem] border border-slate-700/50 backdrop-blur-xl">
-          {/* Left: Image Section */}
           <div className="space-y-4">
             <div className="aspect-square rounded-[2.5rem] overflow-hidden border border-slate-700 bg-slate-900 relative shadow-2xl">
-              {/* Universal "Selling" Tag */}
               <div className="absolute top-5 left-5 z-10 bg-emerald-500 text-slate-950 px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
                 <BadgeCheck size={14} />
                 <span className="text-[10px] font-black uppercase tracking-widest text-emerald-950">
@@ -126,7 +123,6 @@ const AdDetail = () => {
             </div>
           </div>
 
-          {/* Right: Info Section */}
           <div className="flex flex-col justify-center space-y-8">
             <div>
               <span className="bg-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-emerald-500/20 inline-block mb-4">
@@ -176,7 +172,6 @@ const AdDetail = () => {
               </div>
             </div>
 
-            {/* Seller Contact Card */}
             <div className="bg-emerald-500 p-8 rounded-[2.5rem] shadow-xl shadow-emerald-500/10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <p className="text-emerald-950/70 font-black text-[10px] uppercase tracking-widest mb-1">

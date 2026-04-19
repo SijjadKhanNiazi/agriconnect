@@ -19,7 +19,7 @@ const Signup = () => {
     email: "",
     password: "",
     phone: "",
-    city: "Mianwali", // Default city
+    city: "Mianwali",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Signup = () => {
     const { error } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
-      // Metadata mein extra info save ho rahi hai
+
       options: {
         data: {
           full_name: formData.fullName,
@@ -70,7 +70,6 @@ const Signup = () => {
         </div>
 
         <form onSubmit={handleSignup} className="space-y-5">
-          {/* Full Name */}
           <div className="relative group">
             <User
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500 transition-colors"
@@ -86,7 +85,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Phone Number */}
           <div className="relative group">
             <Phone
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500 transition-colors"
@@ -102,7 +100,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* City Selection */}
           <div className="relative group">
             <MapPin
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500 transition-colors"
@@ -122,7 +119,6 @@ const Signup = () => {
             </select>
           </div>
 
-          {/* Email */}
           <div className="relative group">
             <Mail
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500 transition-colors"
@@ -138,7 +134,6 @@ const Signup = () => {
             />
           </div>
 
-          {/* Password */}
           <div className="relative group">
             <Lock
               className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-emerald-500 transition-colors"

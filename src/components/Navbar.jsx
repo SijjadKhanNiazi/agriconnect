@@ -15,7 +15,6 @@ const Navbar = ({ session }) => {
   return (
     <nav className="sticky top-0 z-50 bg-[#0f172a]/80 backdrop-blur-xl border-b border-slate-700/50 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo Section */}
         <Link to="/" className="flex items-center gap-2 group">
           <div className="bg-emerald-500 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-emerald-500/20">
             <Leaf className="text-[#0f172a]" size={24} />
@@ -30,7 +29,6 @@ const Navbar = ({ session }) => {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <Link
             to="/"
@@ -48,7 +46,6 @@ const Navbar = ({ session }) => {
           )}
         </div>
 
-        {/* Action Buttons */}
         <div className="flex items-center gap-4">
           <Link
             to="/create"

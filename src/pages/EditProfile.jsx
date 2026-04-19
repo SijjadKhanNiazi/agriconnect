@@ -24,7 +24,6 @@ const EditProfile = () => {
       } = await supabase.auth.getUser();
 
       if (user) {
-        // 1. Pehle database (profiles table) se data check karte hain
         const { data, error } = await supabase
           .from("profiles")
           .select("username, phone, address")
@@ -32,10 +31,8 @@ const EditProfile = () => {
           .single();
 
         if (data) {
-          // Agar database mein data mil gaya
           setProfile(data);
         } else {
-          // 2. Agar database khali hai, to Signup ke waqt wala metadata use karte hain
           setProfile({
             username: user.user_metadata?.full_name || "",
             phone: user.user_metadata?.phone || "",

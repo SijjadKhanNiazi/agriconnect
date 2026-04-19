@@ -31,7 +31,6 @@ const MyAds = () => {
     fetchMyAds();
   }, []);
 
-  // Jab category change ho to ads filter hon
   useEffect(() => {
     if (selectedCategory === "All") {
       setFilteredAds(myAds);
@@ -64,7 +63,6 @@ const MyAds = () => {
   };
 
   const deleteAd = async (ad) => {
-    // Custom Toast with Action (Delete Confirmation)
     toast(
       (t) => (
         <div className="flex flex-col gap-3">
@@ -146,7 +144,6 @@ const MyAds = () => {
             </p>
           </div>
 
-          {/* Category Dropdown Filter */}
           <div className="flex flex-col gap-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1 flex items-center gap-2">
               <Filter size={12} /> Filter by Category
@@ -190,7 +187,6 @@ const MyAds = () => {
                 key={ad.id}
                 className="group bg-slate-800/30 hover:bg-slate-800/50 border border-slate-700/50 rounded-[2.5rem] p-5 transition-all duration-500 flex flex-col md:flex-row items-center gap-6 shadow-sm hover:shadow-2xl"
               >
-                {/* Image */}
                 <div className="w-full md:w-40 h-32 bg-slate-900 rounded-[1.5rem] flex-shrink-0 overflow-hidden border border-slate-700/50">
                   {ad.image_url ? (
                     <img
@@ -205,7 +201,6 @@ const MyAds = () => {
                   )}
                 </div>
 
-                {/* Info */}
                 <div className="flex-1 w-full">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="bg-emerald-500/10 text-emerald-400 text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full border border-emerald-500/20">

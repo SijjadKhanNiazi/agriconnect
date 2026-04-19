@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { supabase } from "./services/supabaseClient";
 import { Toaster } from "react-hot-toast";
 
-// Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Pages
 import Home from "./pages/Home";
 import CreateListing from "./pages/CreateListing";
 import Login from "./pages/Login";
