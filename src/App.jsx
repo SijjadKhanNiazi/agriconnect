@@ -22,6 +22,7 @@ import Services from "./pages/Services";
 import Calculator from "./pages/Calculator";
 import ProfitCalculator from "./pages/ProfitCalculator";
 import GovtSchemes from "./pages/GovtSchemes";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -71,6 +72,7 @@ function App() {
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/profit-calculator" element={<ProfitCalculator />} />
             <Route path="/govt-schemes" element={<GovtSchemes />} />
+            <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Protected Routes */}
             <Route
@@ -85,7 +87,7 @@ function App() {
           </Routes>
         </main>
 
-        <Footer />
+        <Footer session={session} />
       </div>
     </Router>
   );

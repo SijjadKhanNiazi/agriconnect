@@ -3,7 +3,7 @@ import { Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ session }) => {
   return (
     <footer className="border-t border-slate-800 bg-[#0f172a] py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -37,6 +37,14 @@ const Footer = () => {
               Help
             </span>
           </Link>
+
+          {session && session.user && session.user.email === "sijjadkhan603@gmail.com" && (
+            <Link to="/admin">
+              <span className="hover:text-rose-500 cursor-pointer transition-colors">
+                Admin
+              </span>
+            </Link>
+          )}
         </div>
 
         <p className="text-slate-600 text-[10px] font-medium tracking-tighter">

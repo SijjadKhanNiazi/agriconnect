@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { TrendingUp, TrendingDown, Minus, Search, Calendar } from "lucide-react";
 
 const MarketRates = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const currentDate = new Date().toLocaleDateString('ur-PK', {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
   });
@@ -18,6 +19,10 @@ const MarketRates = () => {
     { name: "Sarson / Toria", currentPrice: "20,200", prevPrice: "20,000", unit: "100kg", status: "up" },
     { name: "Til (Sesame)", currentPrice: "14,000", prevPrice: "14,500", unit: "100kg", status: "down" },
   ];
+
+  const filteredCrops = crops.filter((crop) =>
+    crop.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-slate-200 p-6 md:p-12 w-full">
@@ -42,6 +47,8 @@ const MarketRates = () => {
             <input 
               type="text" 
               placeholder="Fasal ka naam likhen..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-slate-900 border border-slate-700 text-slate-200 pl-11 pr-4 py-3 rounded-xl outline-none focus:border-emerald-500/50 focus:ring-4 focus:ring-emerald-500/10 transition-all text-sm font-semibold"
             />
           </div>
@@ -58,7 +65,7 @@ const MarketRates = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-700/50">
-              {crops.map((crop, index) => (
+              {filteredCrops.map((crop, index) => (
                 <tr key={index} className="hover:bg-slate-800/40 transition-colors group">
                   <td className="p-6">
                     <div className="font-bold text-white text-lg">{crop.name}</div>
@@ -86,6 +93,13 @@ const MarketRates = () => {
                   </td>
                 </tr>
               ))}
+              {filteredCrops.length === 0 && (
+                <tr>
+                  <td colSpan="4" className="p-8 text-center text-slate-500 font-bold">
+                    Koi fasal nahi mili.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

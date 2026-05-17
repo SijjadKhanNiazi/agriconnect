@@ -79,6 +79,14 @@ const Navbar = ({ session }) => {
                 <LayoutDashboard size={18} /> My Ads
               </Link>
             )}
+            {session && session.user && session.user.email === "sijjadkhan603@gmail.com" && (
+              <Link
+                to="/admin"
+                className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/admin") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
+              >
+                <User size={18} /> Admin
+              </Link>
+            )}
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
