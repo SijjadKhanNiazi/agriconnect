@@ -18,6 +18,10 @@ import Privacy from "./pages/Privacy";
 import Help from "./pages/Help";
 import MarketRates from "./pages/MarketRates";
 import CropAdvisory from "./pages/CropAdvisory";
+import Services from "./pages/Services";
+import Calculator from "./pages/Calculator";
+import ProfitCalculator from "./pages/ProfitCalculator";
+import GovtSchemes from "./pages/GovtSchemes";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -63,6 +67,10 @@ function App() {
             <Route path="/help" element={<Help />} />
             <Route path="/market-rates" element={<MarketRates />} />
             <Route path="/advisory" element={<CropAdvisory />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/profit-calculator" element={<ProfitCalculator />} />
+            <Route path="/govt-schemes" element={<GovtSchemes />} />
 
             {/* Protected Routes */}
             <Route

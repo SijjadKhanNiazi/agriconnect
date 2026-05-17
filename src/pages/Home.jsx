@@ -11,6 +11,12 @@ import {
   Ghost,
   PlusCircle,
   RefreshCcw,
+  Wrench,
+  BookOpen,
+  Calculator as CalcIcon,
+  TrendingUp,
+  Coins,
+  Landmark,
 } from "lucide-react";
 import MandiTicker from "../components/MandiTicker";
 import WeatherWidget from "../components/WeatherWidget";
@@ -58,6 +64,46 @@ const Home = () => {
       <div className="p-6 w-full">
         <div className="mb-8">
           <WeatherWidget />
+        </div>
+
+        {/* Quick Links Section */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          <Link to="/market-rates" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <TrendingUp className="text-emerald-500" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Mandi Rates</span>
+          </Link>
+          <Link to="/advisory" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <BookOpen className="text-sky-500" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Advisory</span>
+          </Link>
+          <Link to="/services" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <Wrench className="text-rose-500" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Services</span>
+          </Link>
+          <Link to="/calculator" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <CalcIcon className="text-amber-500" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Calculator</span>
+          </Link>
+          <Link to="/profit-calculator" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <Coins className="text-emerald-400" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Profit Calc</span>
+          </Link>
+          <Link to="/govt-schemes" className="bg-slate-800/40 border border-slate-700/50 p-4 rounded-2xl flex flex-col items-center gap-3 hover:bg-slate-800/70 hover:border-emerald-500/50 transition-all group">
+            <div className="bg-slate-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
+              <Landmark className="text-sky-400" />
+            </div>
+            <span className="text-sm font-bold text-white text-center">Govt Schemes</span>
+          </Link>
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 gap-8 bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700/50 backdrop-blur-xl shadow-2xl">

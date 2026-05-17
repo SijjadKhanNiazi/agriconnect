@@ -10,6 +10,8 @@ import {
   Leaf,
   TrendingUp,
   BookOpen,
+  Wrench,
+  Calculator as CalcIcon,
 } from "lucide-react";
 
 const Navbar = ({ session }) => {
@@ -56,6 +58,18 @@ const Navbar = ({ session }) => {
               className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/advisory") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
             >
               <BookOpen size={18} /> Advisory
+            </Link>
+            <Link
+              to="/services"
+              className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/services") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
+            >
+              <Wrench size={18} /> Services
+            </Link>
+            <Link
+              to="/calculator"
+              className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/calculator") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
+            >
+              <CalcIcon size={18} /> Calculator
             </Link>
             {session && (
               <Link
