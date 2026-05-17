@@ -8,6 +8,8 @@ import {
   User,
   Home as HomeIcon,
   Leaf,
+  TrendingUp,
+  BookOpen,
 } from "lucide-react";
 
 const Navbar = ({ session }) => {
@@ -20,7 +22,7 @@ const Navbar = ({ session }) => {
     <>
       {/* --- TOP NAVBAR (Desktop & Mobile Brand) --- */}
       <nav className="sticky top-0 z-50 bg-[#0f172a]/80 backdrop-blur-xl border-b border-slate-700/50 px-4 md:px-6 py-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="w-full flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-emerald-500 p-1.5 md:p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-emerald-500/20">
               <Leaf className="text-[#0f172a]" size={20} />
@@ -42,6 +44,18 @@ const Navbar = ({ session }) => {
               className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
             >
               <HomeIcon size={18} /> Home
+            </Link>
+            <Link
+              to="/market-rates"
+              className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/market-rates") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
+            >
+              <TrendingUp size={18} /> Mandi Rates
+            </Link>
+            <Link
+              to="/advisory"
+              className={`flex items-center gap-2 text-sm font-bold transition-colors ${isActive("/advisory") ? "text-emerald-400" : "text-slate-400 hover:text-emerald-400"}`}
+            >
+              <BookOpen size={18} /> Advisory
             </Link>
             {session && (
               <Link
@@ -112,6 +126,16 @@ const Navbar = ({ session }) => {
           </Link>
 
           <Link
+            to="/market-rates"
+            className={`flex flex-col items-center gap-1 ${isActive("/market-rates") ? "text-emerald-500" : "text-slate-500"}`}
+          >
+            <TrendingUp size={22} />
+            <span className="text-[10px] font-bold uppercase tracking-tighter">
+              Rates
+            </span>
+          </Link>
+
+          <Link
             to="/create"
             className="flex flex-col items-center -mt-10 bg-emerald-500 p-4 rounded-full shadow-lg shadow-emerald-500/40 text-slate-950 ring-4 ring-[#0f172a]"
           >
@@ -125,6 +149,16 @@ const Navbar = ({ session }) => {
             <LayoutDashboard size={22} />
             <span className="text-[10px] font-bold uppercase tracking-tighter">
               My Ads
+            </span>
+          </Link>
+
+          <Link
+            to="/advisory"
+            className={`flex flex-col items-center gap-1 ${isActive("/advisory") ? "text-emerald-500" : "text-slate-500"}`}
+          >
+            <BookOpen size={22} />
+            <span className="text-[10px] font-bold uppercase tracking-tighter">
+              Advisory
             </span>
           </Link>
         </div>

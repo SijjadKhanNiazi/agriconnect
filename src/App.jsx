@@ -16,6 +16,8 @@ import EditProfile from "./pages/EditProfile";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Help from "./pages/Help";
+import MarketRates from "./pages/MarketRates";
+import CropAdvisory from "./pages/CropAdvisory";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -59,6 +61,8 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/market-rates" element={<MarketRates />} />
+            <Route path="/advisory" element={<CropAdvisory />} />
 
             {/* Protected Routes */}
             <Route

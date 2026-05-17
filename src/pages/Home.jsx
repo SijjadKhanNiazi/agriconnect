@@ -13,6 +13,7 @@ import {
   RefreshCcw,
 } from "lucide-react";
 import MandiTicker from "../components/MandiTicker";
+import WeatherWidget from "../components/WeatherWidget";
 
 const Home = () => {
   const [listings, setListings] = useState([]);
@@ -54,7 +55,11 @@ const Home = () => {
     <div className="min-h-screen bg-[#0f172a] text-slate-200">
       <MandiTicker />
 
-      <div className="p-6 max-w-7xl mx-auto">
+      <div className="p-6 w-full">
+        <div className="mb-8">
+          <WeatherWidget />
+        </div>
+
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 gap-8 bg-slate-800/40 p-8 rounded-[2rem] border border-slate-700/50 backdrop-blur-xl shadow-2xl">
           <div className="space-y-2">
             <h2 className="text-4xl font-black text-white tracking-tight">
