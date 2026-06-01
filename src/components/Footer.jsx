@@ -38,13 +38,15 @@ const Footer = ({ session }) => {
             </span>
           </Link>
 
-          {session && session.user && session.user.email === "sijjadkhan603@gmail.com" && (
-            <Link to="/admin">
-              <span className="hover:text-rose-500 cursor-pointer transition-colors">
-                Admin
-              </span>
-            </Link>
-          )}
+          {session &&
+            session.user &&
+            session.user.email === "sijjadkhan603@gmail.com" && (
+              <Link to="/admin">
+                <span className="hover:text-rose-500 cursor-pointer transition-colors">
+                  Admin
+                </span>
+              </Link>
+            )}
         </div>
 
         <p className="text-slate-600 text-[10px] font-medium tracking-tighter">
