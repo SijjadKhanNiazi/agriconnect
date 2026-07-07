@@ -171,7 +171,7 @@ const Calculator = () => {
           </div>
 
           <div className="mt-8 text-center text-xs font-bold text-slate-500 uppercase tracking-wider">
-            * Yeh takhmeena aam miqdar par mabni hai!
+            * Yeh takhmeena aam miqdar par mabni hai...
           </div>
         </div>
       </div>
